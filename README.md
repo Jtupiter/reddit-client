@@ -12,3 +12,6 @@ Steps to create:
 
 No Bower installing / npm installing needed as files are already included.
 As well no need to build client files with Grunt as they are already compiled.
+
+
+For Pebble interviewers: Main files of interest are server.js and all files in /public excluding the libs files.
