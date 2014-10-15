@@ -1,0 +1,41 @@
+<html ng-app="redditClientApp">
+  <head>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="libs.css" rel="stylesheet" type="text/css">
+    <script src="libs.js"></script>
+    <script src="redditCtrl.js"></script>
+  </head>
+  <body ng-controller="RedditCtrl">
+    <div ng-hide="subRedditSubmitted" id="reddit-home" class="row">
+      <h1>Reddit Client</h1>
+      <h4>Enter a SubReddit</h4>
+      <form ng-submit="submitSubReddit()">
+        <div class="input-group subreddit-input">
+          <input type="text" ng-model="subReddit" class="form-control" placeholder="e.g. funny">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="submit">Submit</button>
+          </span>
+        </div>
+      </form>
+    </div>
+    <div ng-show="subRedditSubmitted" class="row">
+      <div id="subreddit-container">
+        <h1><a class="reddit-header" href="/">Reddit Client</a></h1>
+        <ul class="nav nav-tabs nav-justified" role="tablist">
+          <li ng-class="{active: page=='hot'}" id="hot-page" ng-click="selectHot()">
+            <a href="">Hot</a>
+          </li>
+          <li ng-class="{active: page=='new'}" id="most-recent" ng-click="selectNew()">
+            <a href="">Most Recent</a>
+          </li>
+        </ul>
+        <ul class="headline-list list-group">
+          <li class="list-group-item" ng-repeat="headline in headlines">
+            {{ headline.data.title }}
+          </li>
+        </ul>
+        <a href="" ng-click="morePages()">More</a>
+      </div>
+    </div>
+  </body>
+</html>

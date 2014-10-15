@@ -1,0 +1,18 @@
+#subreddit-container {
+  padding: 5%;
+}
+
+#reddit-home {
+  text-align: center;
+  margin-top: 15%;
+  padding: 0% 10%;
+}
+
+.reddit-header, .reddit-header:active, .reddit-header:hover {
+  text-decoration: none;
+  color: black;
+}
+
+#hot-page, #most-recent {
+  font-size: 1.5em;
+}
